@@ -117,7 +117,8 @@ am_libdos_a_OBJECTS = dos.$(OBJEXT) dos_devices.$(OBJEXT) \
 	dos_mscdex.$(OBJEXT) dos_keyboard_layout.$(OBJEXT) \
 	cdrom.$(OBJEXT) cdrom_ioctl_win32.$(OBJEXT) \
 	cdrom_aspi_win32.$(OBJEXT) cdrom_ioctl_linux.$(OBJEXT) \
-	cdrom_image.$(OBJEXT) cdrom_ioctl_os2.$(OBJEXT)
+	cdrom_image.$(OBJEXT) cdrom_ioctl_os2.$(OBJEXT) \
+	drive_overlay.$(OBJEXT)
 libdos_a_OBJECTS = $(am_libdos_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -303,7 +304,7 @@ libdos_a_SOURCES = dos.cpp dos_devices.cpp dos_execute.cpp dos_files.cpp dos_ioc
 		   drives.cpp drives.h drive_virtual.cpp drive_local.cpp drive_cache.cpp drive_fat.cpp \
 		   drive_iso.cpp dev_con.h dos_mscdex.cpp dos_keyboard_layout.cpp \
 		   cdrom.h cdrom.cpp cdrom_ioctl_win32.cpp cdrom_aspi_win32.cpp cdrom_ioctl_linux.cpp cdrom_image.cpp \
-		   cdrom_ioctl_os2.cpp
+		   cdrom_ioctl_os2.cpp drive_overlay.cpp
 
 all: all-am
 
@@ -375,6 +376,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drive_fat.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drive_iso.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drive_local.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drive_overlay.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drive_virtual.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drives.Po@am__quote@
 

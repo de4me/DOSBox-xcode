@@ -33,6 +33,12 @@
 #include <process.h>
 #endif
 
+#include <time.h>
+#include <sstream>
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
 #include "cross.h"
 #include "SDL.h"
 
@@ -1839,7 +1845,7 @@ static void erasemapperfile() {
 	exit(0);
 }
 
-
+extern bool logoverlay;
 
 //extern void UI_Init(void);
 int main(int argc, char* argv[]) {
@@ -1847,6 +1853,7 @@ int main(int argc, char* argv[]) {
 		CommandLine com_line(argc,argv);
 		Config myconf(&com_line);
 		control=&myconf;
+		logoverlay = control->cmdline->FindExist("-logoverlay",true);
 		/* Init the configuration system and add default values */
 		Config_Add_SDL();
 		DOSBOX_Init();
@@ -1861,11 +1868,24 @@ int main(int argc, char* argv[]) {
 
 		/* Can't disable the console with debugger enabled */
 #if defined(WIN32) && !(C_DEBUG)
+		std::string logname("");
+		time_t ti = time(NULL);
+		struct tm * tp= localtime(&ti);
+		ostringstream os(logname);
+		os << (tp->tm_year+1900)
+		   <<setw(2)<<setfill('0')<< (tp->tm_mon+1)
+		   <<setw(2)<<setfill('0')<<(tp->tm_mday+0)
+		   <<setw(2)<<setfill('0')<<tp->tm_hour
+		   <<setw(2)<<setfill('0')<<tp->tm_min
+		   <<setw(2)<<setfill('0')<<tp->tm_sec
+		   <<setw(2)<<setfill('0')<<".txt"<<ends;
+		std::string tlog = "overlay-" + os.str();
 		if (control->cmdline->FindExist("-noconsole")) {
 			FreeConsole();
 			/* Redirect standard input and standard output */
 			if(freopen(STDOUT_FILE, "w", stdout) == NULL)
 				no_stdout = true; // No stdout so don't write messages
+			if (logoverlay && !no_stdout) freopen(tlog.c_str(),"w",stdout);
 			freopen(STDERR_FILE, "w", stderr);
 			setvbuf(stdout, NULL, _IOLBF, BUFSIZ);	/* Line buffered */
 			setbuf(stderr, NULL);					/* No buffering */
@@ -1878,6 +1898,7 @@ int main(int argc, char* argv[]) {
 				freopen("CONOUT$","w",stdout);
 				freopen("CONOUT$","w",stderr);
 			}
+			if (logoverlay) freopen(tlog.c_str(),"w",stdout);
 			SetConsoleTitle("DOSBox Status Window");
 		}
 #endif  //defined(WIN32) && !(C_DEBUG)
