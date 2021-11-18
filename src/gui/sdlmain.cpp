@@ -495,14 +495,22 @@ static SDL_Surface * GFX_SetupSurfaceScaled(Bit32u sdl_flags, Bit32u bpp) {
 			sdl.clip.x = 0;
 			sdl.clip.y = 0;
 		}
-		return sdl.surface;
 	} else {
 		sdl.clip.x=0;sdl.clip.y=0;
 		sdl.clip.w=(Bit16u)(sdl.draw.width*sdl.draw.scalex);
 		sdl.clip.h=(Bit16u)(sdl.draw.height*sdl.draw.scaley);
 		sdl.surface=SDL_SetVideoMode_Wrap(sdl.clip.w,sdl.clip.h,bpp,sdl_flags);
-		return sdl.surface;
 	}
+#ifdef __APPLE__
+    if ( (sdl.surface != NULL) && (sdl.surface->flags & SDL_OPENGL) ) {
+        double backing_scale_factor = sdl.surface->backing_scale_factor;
+        if( backing_scale_factor > 1.0 ){
+            sdl.clip.w = (Bit16u)(sdl.clip.w * backing_scale_factor);
+            sdl.clip.h = (Bit16u)(sdl.clip.h * backing_scale_factor);
+        }
+    }
+#endif
+    return sdl.surface;
 }
 
 Bitu GFX_SetSize(Bitu width,Bitu height,Bitu flags,double scalex,double scaley,GFX_CallBack_t callback) {
