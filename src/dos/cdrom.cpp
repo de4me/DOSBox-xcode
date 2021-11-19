@@ -27,7 +27,11 @@
 #include <unistd.h>
 
 #include "dosbox.h"
+#ifdef SDL_FRAMEWORK
+#include <SDL/SDL.h>
+#else
 #include "SDL.h"
+#endif
 #include "support.h"
 #include "cdrom.h"
 

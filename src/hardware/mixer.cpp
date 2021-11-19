@@ -36,7 +36,11 @@
 #include <mmsystem.h>
 #endif
 
+#ifdef SDL_FRAMEWORK
+#include <SDL/SDL.h>
+#else
 #include "SDL.h"
+#endif
 #include "mem.h"
 #include "pic.h"
 #include "dosbox.h"

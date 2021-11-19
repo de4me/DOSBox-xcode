@@ -40,7 +40,11 @@
 using namespace std;
 
 #include "cross.h"
+#ifdef SDL_FRAMEWORK
+#include <SDL/SDL.h>
+#else
 #include "SDL.h"
+#endif
 
 #include "dosbox.h"
 #include "video.h"
@@ -61,7 +65,11 @@ using namespace std;
 //#define DISABLE_JOYSTICK
 
 #if C_OPENGL
+#ifdef SDL_FRAMEWORK
+#include <SDL/SDL_opengl.h>
+#else
 #include "SDL_opengl.h"
+#endif
 
 #ifndef APIENTRY
 #define APIENTRY

@@ -13,11 +13,19 @@
 #include "dosbox.h"
 #include "mem.h"
 #include "mixer.h"
+#ifdef SDL_FRAMEWORK
+#include <SDL/SDL.h>
+#include <SDL/SDL_thread.h>
+#else
 #include "SDL.h"
 #include "SDL_thread.h"
-
+#endif
 #if defined(C_SDL_SOUND)
+#ifdef SDL_FRAMEWORK
+#include <SDL_sound/SDL_sound.h>
+#else
 #include "SDL_sound.h"
+#endif
 #endif
 
 #define RAW_SECTOR_SIZE		2352

@@ -26,9 +26,13 @@
 #include <stdio.h>
 #include <assert.h>
 
-
+#ifdef SDL_FRAMEWORK
+#include <SDL/SDL.h>
+#include <SDL/SDL_thread.h>
+#else
 #include "SDL.h"
 #include "SDL_thread.h"
+#endif
 
 #include "dosbox.h"
 #include "video.h"
