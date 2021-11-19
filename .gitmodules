@@ -1,0 +1,4 @@
+[submodule "submodules/SDL_sound"]
+	path = submodules/SDL_sound
+	url = https://github.com/de4me/SDL_sound-xcode.git
+	branch = stable-1.0
