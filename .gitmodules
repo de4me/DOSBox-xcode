@@ -2,3 +2,7 @@
 	path = submodules/SDL_sound
 	url = https://github.com/de4me/SDL_sound-xcode.git
 	branch = stable-1.0
+[submodule "submodules/SDL_net"]
+	path = submodules/SDL_net
+	url = https://github.com/de4me/SDL_net-xcode.git
+	branch = SDL-1.2
