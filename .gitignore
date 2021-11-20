@@ -41,6 +41,7 @@ stamp-h1
 (^|/)build($|/)
 .DS_Store
 **/xcuserdata/
+!Xcode/DOSBox/include/config.h
 
 # for Visual C++
 .vs
