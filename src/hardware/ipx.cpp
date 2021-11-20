@@ -38,7 +38,11 @@
 #include "ipx.h"
 #include "ipxserver.h"
 #include "timer.h"
+#ifdef SDL_FRAMEWORK
+#include <SDL_net/SDL_net.h>
+#else
 #include "SDL_net.h"
+#endif
 #include "programs.h"
 #include "pic.h"
 

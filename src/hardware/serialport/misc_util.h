@@ -59,7 +59,11 @@
  #define CAPWORD NETWRAPPER_TCP
 #endif
 
+#ifdef SDL_FRAMEWORK
+#include <SDL_net/SDL_net.h>
+#else
 #include "SDL_net.h"
+#endif
 
 
 
