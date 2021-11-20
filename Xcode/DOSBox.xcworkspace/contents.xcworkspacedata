@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../submodules/SDL_sound/submodules/SDL/Xcode/SDL/SDL.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../submodules/SDL_net/Xcode/SDL_net/SDL_net.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../submodules/SDL_sound/Xcode/SDL_Sound/SDL_Sound.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DOSBox/DOSBox.xcodeproj">
    </FileRef>
 </Workspace>
