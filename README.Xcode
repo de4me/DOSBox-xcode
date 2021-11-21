@@ -9,3 +9,8 @@ To build DOSBox using Xcode:
 	Open "Xcode/DOSBox.xcworkspace"
 
 
+==============================================================================
+TROUBLESHOOTING
+==============================================================================
+
+If there is a build error, check the versions of the submodules and update them to the current version.
