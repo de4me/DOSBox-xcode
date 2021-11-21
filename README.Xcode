@@ -1,0 +1,11 @@
+==============================================================================
+Using the DOSBox with Xcode
+==============================================================================
+
+To build DOSBox using Xcode:
+
+	git submodule sync --recursive
+	git submodule update --init --recursive --remote
+	Open "Xcode/DOSBox.xcworkspace"
+
+
