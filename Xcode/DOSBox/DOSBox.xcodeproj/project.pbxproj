@@ -48,6 +48,7 @@
 		BD11F2292746CECE0026C87A /* drive_fat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD11F0F12746C6A50026C87A /* drive_fat.cpp */; };
 		BD11F22A2746CECE0026C87A /* drive_cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD11F0B82746C6A50026C87A /* drive_cache.cpp */; };
 		BD11F2332746D1650026C87A /* fpu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD11F1C82746C6A50026C87A /* fpu.cpp */; };
+		BD2F4004280459D9002CB74D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2F4002280459D9002CB74D /* AppDelegate.m */; };
 		BD3CE462274688A600AFE738 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD3CE461274688A600AFE738 /* Assets.xcassets */; };
 		BD40417B2746D68900BF703E /* vga_other.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD11F0482746C6A50026C87A /* vga_other.cpp */; };
 		BD40417C2746D68900BF703E /* memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD11F0462746C6A50026C87A /* memory.cpp */; };
@@ -137,9 +138,10 @@
 		BD553A492748000C00E7897F /* SDL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD553A472748000C00E7897F /* SDL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BD553A4C2748001300E7897F /* SDL_Sound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD553A4B2748001300E7897F /* SDL_Sound.framework */; };
 		BD553A4D2748001300E7897F /* SDL_Sound.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD553A4B2748001300E7897F /* SDL_Sound.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BD553A4F2748001E00E7897F /* libSDLmain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD553A4E2748001E00E7897F /* libSDLmain.a */; };
 		BD553A512748050E00E7897F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4042082746E2B800BF703E /* AudioToolbox.framework */; };
 		BD553A52274805E800E7897F /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD40420A2746E2C700BF703E /* AudioUnit.framework */; };
+		BD9E8B542811CB3F0050BD78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9E8B532811CB3F0050BD78 /* main.m */; };
+		BDAE71C02807699800052259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDAE71BF2807699700052259 /* Main.storyboard */; };
 		BDB13B8F2748160F005D7BE5 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD553A472748000C00E7897F /* SDL.framework */; };
 		BDB13B9027481610005D7BE5 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD553A472748000C00E7897F /* SDL.framework */; };
 		BDB13B9127481611005D7BE5 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD553A472748000C00E7897F /* SDL.framework */; };
@@ -446,6 +448,8 @@
 		BD11F2022746CDA60026C87A /* libdebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdebug.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD11F20E2746CE3E0026C87A /* libdos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdos.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD11F22F2746D14B0026C87A /* libfpu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfpu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD2F4001280459D9002CB74D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BD2F4002280459D9002CB74D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BD3CE458274688A500AFE738 /* DOSBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOSBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3CE461274688A600AFE738 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD3CE468274688A600AFE738 /* DOSBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DOSBox.entitlements; sourceTree = "<group>"; };
@@ -463,8 +467,10 @@
 		BD553A4B2748001300E7897F /* SDL_Sound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDL_Sound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD553A4E2748001E00E7897F /* libSDLmain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSDLmain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7596582748436200AAC44C /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = config.h; path = include/config.h; sourceTree = "<group>"; };
+		BD9E8B532811CB3F0050BD78 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BDA45B7D274910A200816785 /* SDL_net.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL_net.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA45B8E2749136900816785 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BDAE71BF2807699700052259 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BDD1613E2749591700933AB3 /* SDL_net.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDL_net.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF78EDD2746D3640031C693 /* libgui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgui.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -514,7 +520,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD553A4F2748001E00E7897F /* libSDLmain.a in Frameworks */,
 				BD4041F42746E20E00BF703E /* libcpu.a in Frameworks */,
 				BD4041F52746E20E00BF703E /* libdebug.a in Frameworks */,
 				BD553A482748000C00E7897F /* SDL.framework in Frameworks */,
@@ -1069,6 +1074,10 @@
 		BD3CE45A274688A500AFE738 /* DOSBox */ = {
 			isa = PBXGroup;
 			children = (
+				BD2F4001280459D9002CB74D /* AppDelegate.h */,
+				BD2F4002280459D9002CB74D /* AppDelegate.m */,
+				BD9E8B532811CB3F0050BD78 /* main.m */,
+				BDAE71BF2807699700052259 /* Main.storyboard */,
 				BDA45B8E2749136900816785 /* Info.plist */,
 				BD3CE461274688A600AFE738 /* Assets.xcassets */,
 				BD3CE468274688A600AFE738 /* DOSBox.entitlements */,
@@ -1474,6 +1483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD3CE462274688A600AFE738 /* Assets.xcassets in Resources */,
+				BDAE71C02807699800052259 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1553,6 +1563,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2F4004280459D9002CB74D /* AppDelegate.m in Sources */,
+				BD9E8B542811CB3F0050BD78 /* main.m in Sources */,
 				BD4041F32746E1E800BF703E /* dosbox.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1824,7 +1836,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1887,7 +1899,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -1914,8 +1926,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOSBox/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2002-2021 The DOSBox Team";
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2002-2022 The DOSBox Team";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = DOSBoxApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1942,8 +1955,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOSBox/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2002-2021 The DOSBox Team";
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2002-2022 The DOSBox Team";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = DOSBoxApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
