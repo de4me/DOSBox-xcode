@@ -88,7 +88,21 @@
 /* #undef C_SSHOT */
 
 /* The type of cpu this target has */
+#if defined(__aarch64__)
 #define C_TARGETCPU UNKNOWN
+#elif defined(__x86_64__)
+#define C_TARGETCPU X86_64
+#elif defined(__arm__)
+#define C_TARGETCPU ARMV4LE
+#elif defined(__i386__)
+#define C_TARGETCPU X86
+#elif defined(__ppc__)
+#define C_TARGETCPU POWERPC
+#elif defined(__mips__)
+#define C_TARGETCPU MIPSEL
+#else
+#define C_TARGETCPU UNKNOWN
+#endif
 
 /* Define to 1 to use a unaligned memory access */
 /* #undef C_UNALIGNED_MEMORY */
