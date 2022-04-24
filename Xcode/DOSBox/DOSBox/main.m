@@ -7,7 +7,8 @@
 
 
 #import <Cocoa/Cocoa.h>
-#import "AppDelegate.h"
+#include <sys/param.h> /* for MAXPATHLEN */
+#include "AppDelegate.h"
 
 
 static int IsRootCwd() {
@@ -31,21 +32,6 @@ static int IsFinderLaunch(const int argc, const char **argv) {
 }
 
 int main(int argc, const char * argv[]) {
-    /* Copy the arguments into a global variable */
-    if (IsFinderLaunch(argc, argv)) {
-        gArgv = (const char **) malloc(sizeof (char *) * 2);
-        gArgv[0] = argv[0];
-        gArgv[1] = NULL;
-        gArgc = 1;
-        gFinderLaunch = YES;
-    } else {
-        int i;
-        gArgc = argc;
-        gArgv = (const char **) malloc(sizeof (char *) * (argc+1));
-        for (i = 0; i <= argc; i++)
-            gArgv[i] = argv[i];
-        gArgv[i] = NULL;
-        gFinderLaunch = NO;
-    }
+    gFinderLaunch = IsFinderLaunch(argc, argv);
     return NSApplicationMain(argc, argv);
 }

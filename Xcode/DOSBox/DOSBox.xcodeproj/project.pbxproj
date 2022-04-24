@@ -180,6 +180,7 @@
 		BDD1614A2749592700933AB3 /* SDL_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD1613E2749591700933AB3 /* SDL_net.framework */; };
 		BDD1614B2749592800933AB3 /* SDL_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD1613E2749591700933AB3 /* SDL_net.framework */; };
 		BDD1614C2749592800933AB3 /* SDL_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDD1613E2749591700933AB3 /* SDL_net.framework */; };
+		BDE884AB2811EB72009C43F7 /* NSString_Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE884AA2811EB72009C43F7 /* NSString_Utils.m */; };
 		BDF78EE12746D3AD0031C693 /* render_scalers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD11F1842746C6A50026C87A /* render_scalers.cpp */; };
 		BDF78EE22746D3AD0031C693 /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD11F1802746C6A50026C87A /* midi.cpp */; };
 		BDF78EE32746D3AD0031C693 /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD11F17C2746C6A50026C87A /* render.cpp */; };
@@ -472,6 +473,8 @@
 		BDA45B8E2749136900816785 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BDAE71BF2807699700052259 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BDD1613E2749591700933AB3 /* SDL_net.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDL_net.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDE884A92811EB72009C43F7 /* NSString_Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSString_Utils.h; sourceTree = "<group>"; };
+		BDE884AA2811EB72009C43F7 /* NSString_Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSString_Utils.m; sourceTree = "<group>"; };
 		BDF78EDD2746D3640031C693 /* libgui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgui.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1077,12 +1080,38 @@
 				BD2F4001280459D9002CB74D /* AppDelegate.h */,
 				BD2F4002280459D9002CB74D /* AppDelegate.m */,
 				BD9E8B532811CB3F0050BD78 /* main.m */,
+				BD90AF902812B04E00B775D1 /* Utils */,
+				BD90AF912812B06100B775D1 /* Storyboards */,
+				BD90AF922812B07F00B775D1 /* Resources */,
+			);
+			path = DOSBox;
+			sourceTree = "<group>";
+		};
+		BD90AF902812B04E00B775D1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BDE884A92811EB72009C43F7 /* NSString_Utils.h */,
+				BDE884AA2811EB72009C43F7 /* NSString_Utils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BD90AF912812B06100B775D1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				BDAE71BF2807699700052259 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BD90AF922812B07F00B775D1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				BDA45B8E2749136900816785 /* Info.plist */,
 				BD3CE461274688A600AFE738 /* Assets.xcassets */,
 				BD3CE468274688A600AFE738 /* DOSBox.entitlements */,
 			);
-			path = DOSBox;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1566,6 +1595,7 @@
 				BD2F4004280459D9002CB74D /* AppDelegate.m in Sources */,
 				BD9E8B542811CB3F0050BD78 /* main.m in Sources */,
 				BD4041F32746E1E800BF703E /* dosbox.cpp in Sources */,
+				BDE884AB2811EB72009C43F7 /* NSString_Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

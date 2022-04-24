@@ -14,13 +14,15 @@
 @import SDL;
 
 
-int gArgc;
-const char** gArgv;
+#include "NSString_Utils.h"
+
+
 BOOL gFinderLaunch;
 BOOL gCalledAppMainline = FALSE;
 
 
 //MARK: - DOSBoxApplication
+
 
 @implementation DOSBoxApplication
 
@@ -35,7 +37,16 @@ BOOL gCalledAppMainline = FALSE;
 
 @end
 
+
 //MARK: - AppDelegate
+
+
+@interface AppDelegate()
+
+@property NSURL* url;
+
+@end
+
 
 /* The main class of the application, the application's delegate */
 @implementation AppDelegate
@@ -73,55 +84,62 @@ BOOL gCalledAppMainline = FALSE;
  */
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
 {
-    const char *temparg;
-    size_t arglen;
-    char *arg;
-    const char **newargv;
-
-    if (!gFinderLaunch)  /* MacOS is passing command line args. */
-        return FALSE;
-
-    if (gCalledAppMainline)  /* app has started, ignore this document. */
-        return FALSE;
-
-    temparg = [filename UTF8String];
-    arglen = SDL_strlen(temparg) + 1;
-    arg = (char *) SDL_malloc(arglen);
-    if (arg == NULL)
-        return FALSE;
-
-    newargv = (const char **) realloc(gArgv, sizeof (char *) * (gArgc + 2));
-    if (newargv == NULL)
-    {
-        SDL_free(arg);
-        return FALSE;
+    NSString* mime_type = filename.mimeType;
+    if ([mime_type isEqualToString:@"public.dosbox-application"]) {
+        NSURL* url = [NSURL fileURLWithPath:filename];
+        if (gCalledAppMainline) {
+            NSWorkspace* work_space = NSWorkspace.sharedWorkspace;
+#if (MAC_OS_X_VERSION_MIN_REQUIRED >= 101500)
+            NSWorkspaceOpenConfiguration* config = [NSWorkspaceOpenConfiguration new];
+            config.createsNewApplicationInstance = TRUE;
+            [work_space openApplicationAtURL:url configuration:config completionHandler:NULL];
+#elif (MAC_OS_X_VERSION_MAX_ALLOWED >= 101500)
+            if (@available(macOS 10.15, *)) {
+                NSWorkspaceOpenConfiguration* config = [NSWorkspaceOpenConfiguration new];
+                config.createsNewApplicationInstance = TRUE;
+                [work_space openApplicationAtURL:url configuration:config completionHandler:NULL];
+            } else {
+                [work_space openURL:url options:NSWorkspaceLaunchNewInstance configuration:NSDictionary.dictionary error:NULL];
+            }
+#else
+            [work_space openURL:url options:NSWorkspaceLaunchNewInstance configuration:NSDictionary.dictionary error:NULL];
+#endif
+            return FALSE;
+        } else {
+            chdir(filename.UTF8String);
+            gFinderLaunch = FALSE;
+            self.url = url;
+            return TRUE;
+        }
+    } else {
+        if (!gFinderLaunch)  /* MacOS is passing command line args. */
+            return FALSE;
+        if (gCalledAppMainline)  /* app has started, ignore this document. */
+            return FALSE;
+        return TRUE;
     }
-    gArgv = newargv;
-
-    SDL_strlcpy(arg, temparg, arglen);
-    gArgv[gArgc++] = arg;
-    gArgv[gArgc] = NULL;
-    return TRUE;
 }
 
 /* Called when the internal event loop has just started running */
 - (void)applicationDidFinishLaunching:(NSNotification *)note
 {
+    /* Set the working directory to the .app's parent directory */
+    [self setupWorkingDirectory:gFinderLaunch];
+    /* Hand off to main application code */
+    gCalledAppMainline = TRUE;
     [self performSelectorOnMainThread:@selector(run) withObject:NULL waitUntilDone:FALSE];
 }
 
 - (void)run
 {
-    int status;
-
-    /* Set the working directory to the .app's parent directory */
-    [self setupWorkingDirectory:gFinderLaunch];
-
-    /* Hand off to main application code */
-    gCalledAppMainline = TRUE;
-    
-    status = SDL_main (gArgc, (char**) gArgv);
-    
+    NSArray<NSString*>* arguments = [[NSProcessInfo processInfo] arguments];
+    int argc = arguments.count;
+    const char** argv = malloc(sizeof(const char*) * argc);
+    [arguments enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        argv[idx] = obj.UTF8String;
+    }];
+    int status = SDL_main(argc, (char**)argv);
+    free(argv);
     /* We're done, thank you for playing */
     exit(status);
 }

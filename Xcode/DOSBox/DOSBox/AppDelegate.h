@@ -9,20 +9,31 @@
 #ifndef _AppDelegate_h_
 #define _AppDelegate_h_
 
+
 #import <Cocoa/Cocoa.h>
 
 
-extern int gArgc;
-extern const char** gArgv;
 extern BOOL gFinderLaunch;
-extern BOOL gCalledAppMainline;
+
+
+//MARK: - DOSBoxApplication
 
 
 @interface DOSBoxApplication: NSApplication
 @end
 
+
+//MARK: - AppDelegate
+
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface AppDelegate: NSObject <NSApplicationDelegate>
+
+@property (readonly) NSURL* _Nullable url;
+
 @end
 
+NS_ASSUME_NONNULL_END
 
 #endif /* _AppDelegate_h_ */
