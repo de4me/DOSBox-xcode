@@ -451,6 +451,7 @@
 		BD11F22F2746D14B0026C87A /* libfpu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfpu.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2F4001280459D9002CB74D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BD2F4002280459D9002CB74D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BD3894D028169532002F8BCC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		BD3CE458274688A500AFE738 /* DOSBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOSBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3CE461274688A600AFE738 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD3CE468274688A600AFE738 /* DOSBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DOSBox.entitlements; sourceTree = "<group>"; };
@@ -1045,6 +1046,7 @@
 		BD3CE44F274688A500AFE738 = {
 			isa = PBXGroup;
 			children = (
+				BD3894D028169532002F8BCC /* README.md */,
 				BD7596582748436200AAC44C /* config.h */,
 				BD11F00B2746C6670026C87A /* include */,
 				BD11F0332746C6A50026C87A /* src */,
