@@ -6,27 +6,41 @@
 
 # FEATURES
 
-1) Support form modern macOS;
-2) Multiple display support;
-3) DOSBox Application package (Run dos application with double click);
-4) Bug fixes and improvements;
+- Support for modern macOS;
+- Multiple display support;
+- DOSBox Application package (Run dos applications with double click);
+- Bug fixes and improvements;
 
 # BUILD
 
 cd ~/Desktop/
+
 git clone https://github.com/de4me/DOSBox-xcode.git DOSBox-xcode
+
 cd ~/Desktop/DOSBox-xcode/submodules/
+
 git clone --branch "SDL-1.2" https://github.com/de4me/SDL_net-xcode.git SDL_net
+
 cd SDL_net/submodules
+
 git clone https://github.com/de4me/SDL-1.2-xcode.git SDL
+
 cd ~/Desktop/DOSBox-xcode/submodules/
+
 git clone --branch "stable-1.0" https://github.com/de4me/SDL_sound-xcode.git SDL_sound
+
 cd SDL_sound/submodules
+
 git clone https://github.com/de4me/SDL-1.2-xcode.git SDL
+
 git clone https://github.com/de4me/flac-xcode.git flac
+
 git clone https://github.com/de4me/mpg123-xcode.git mpg123
+
 git clone https://github.com/de4me/vorbis-xcode.git vorbis
+
 cd vorbis/submodules
+
 git clone https://github.com/de4me/ogg-xcode.git ogg
 
 Now you can Open ~/Desktop/DOSBox-xcode/Xcode/DOSBox.xcworkspace and build.
