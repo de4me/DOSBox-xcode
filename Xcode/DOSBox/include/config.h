@@ -22,7 +22,7 @@
 
 
 /* Define if building universal (internal helper macro) */
-/* #undef AC_APPLE_UNIVERSAL_BUILD */
+#define AC_APPLE_UNIVERSAL_BUILD 1
 
 /* Compiling on BSD */
 /* #undef BSD */
