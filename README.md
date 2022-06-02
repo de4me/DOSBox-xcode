@@ -21,15 +21,13 @@ cd ~/Desktop/DOSBox-xcode/submodules/
 
 git clone --branch "SDL-1.2" https://github.com/de4me/SDL_net-xcode.git SDL_net
 
-cd SDL_net/submodules
+git clone --branch "stable-1.0" https://github.com/de4me/SDL_sound-xcode.git SDL_sound
+
+cd ~/Desktop/DOSBox-xcode/submodules/SDL_net/submodules
 
 git clone https://github.com/de4me/SDL-1.2-xcode.git SDL
 
-cd ~/Desktop/DOSBox-xcode/submodules/
-
-git clone --branch "stable-1.0" https://github.com/de4me/SDL_sound-xcode.git SDL_sound
-
-cd SDL_sound/submodules
+cd ~/Desktop/DOSBox-xcode/submodules/SDL_sound/submodules
 
 git clone https://github.com/de4me/SDL-1.2-xcode.git SDL
 
@@ -39,7 +37,7 @@ git clone https://github.com/de4me/mpg123-xcode.git mpg123
 
 git clone https://github.com/de4me/vorbis-xcode.git vorbis
 
-cd vorbis/submodules
+cd ~/Desktop/DOSBox-xcode/submodules/SDL_sound/submodules/vorbis/submodules
 
 git clone https://github.com/de4me/ogg-xcode.git ogg
 
