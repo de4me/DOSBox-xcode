@@ -85,7 +85,7 @@ BOOL gCalledAppMainline = FALSE;
 - (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename
 {
     NSString* mime_type = filename.mimeType;
-    if ([mime_type isEqualToString:@"public.dosbox-application"]) {
+    if ([mime_type isEqualToString:@"public.dos-application"]) {
         NSURL* url = [NSURL fileURLWithPath:filename];
         if (gCalledAppMainline) {
             NSWorkspace* work_space = NSWorkspace.sharedWorkspace;

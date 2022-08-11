@@ -8,7 +8,7 @@
 			<key>CFBundleTypeIconSystemGenerated</key>
 			<integer>1</integer>
 			<key>CFBundleTypeName</key>
-			<string>DOSBox Application</string>
+			<string>DOS Application</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
@@ -29,7 +29,7 @@
 				<string>com.apple.package</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>DOSBox Application</string>
+			<string>DOS Application</string>
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
@@ -39,10 +39,11 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>dosbox</string>
+					<string>dosapp</string>
 				</array>
 				<key>public.mime-type</key>
 				<array>
-					<string>public.dosbox-application</string>
+					<string>public.dos-application</string>
 				</array>
 			</dict>
 		</dict>
