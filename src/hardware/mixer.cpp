@@ -58,6 +58,10 @@
 #define MIXER_REMAIN ((1<<MIXER_SHIFT)-1)
 #define MIXER_VOLSHIFT 13
 
+#ifndef DEFAULT_AUDIO_VOLUME
+ #define DEFAULT_AUDIO_VOLUME 1.0f
+#endif
+
 static INLINE Bit16s MIXER_CLIP(Bits SAMP) {
 	if (SAMP < MAX_AUDIO) {
 		if (SAMP > MIN_AUDIO)
@@ -631,8 +635,8 @@ void MIXER_Init(Section* sec) {
 	mixer.pos=0;
 	mixer.done=0;
 	memset(mixer.work,0,sizeof(mixer.work));
-	mixer.mastervol[0]=1.0f;
-	mixer.mastervol[1]=1.0f;
+	mixer.mastervol[0]=DEFAULT_AUDIO_VOLUME;
+	mixer.mastervol[1]=DEFAULT_AUDIO_VOLUME;
 
 	/* Start the Mixer using SDL Sound at 22 khz */
 	SDL_AudioSpec spec;
