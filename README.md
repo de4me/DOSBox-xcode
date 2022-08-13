@@ -8,10 +8,10 @@
 
 - Support for modern macOS;
 - Multiple display support;
-- DOSBox Application package (Run dos applications with double click);
+- DOS Application package (Run DOS applications with double click);
 - Bug fixes and improvements;
 
-# BUILD
+# HOW TO BUILD
 
 cd ~/Desktop/
 
@@ -42,6 +42,13 @@ cd ~/Desktop/DOSBox-xcode/submodules/SDL_sound/submodules/vorbis/submodules
 git clone https://github.com/de4me/ogg-xcode.git ogg
 
 Now you can Open ~/Desktop/DOSBox-xcode/Xcode/DOSBox.xcworkspace and build.
+
+# DOSAPP PACKAGE
+
+1) Create folder with extension "dosapp";
+2) Copy DOS files to this folder;
+3) Add dosbox configuration file with name "dosbox.conf" to this folder;
+4) Double click folder to run dosbox;
 
 # TROUBLESHOOTING
 
