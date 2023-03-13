@@ -1961,7 +1961,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOSBox/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2002-2022 The DOSBox Team";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2002-2023 The DOSBox Team";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = DOSBoxApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1990,7 +1990,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOSBox/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2002-2022 The DOSBox Team";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2002-2023 The DOSBox Team";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = DOSBoxApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
