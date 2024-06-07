@@ -42,6 +42,7 @@ stamp-h1
 .DS_Store
 **/xcuserdata/
 !Xcode/DOSBox/include/config.h
+Package.resolved
 
 # for Visual C++
 .vs
