@@ -20,6 +20,27 @@
 
 # HOW TO BUILD
 
+<details>
+
+<summary>Build with Swift Package Manager (recommended).</summary>
+
+```
+Open Xcode/DOSBox/DOSBox-packages.xcodeproj
+```
+
+or
+
+```
+Open Xcode/DOSBox.xcworkspace
+```
+
+</details>
+
+<details>
+
+<summary>Build with GitHub submodules.</summary>
+
+```bash
 cd ~/Desktop/
 
 git clone https://github.com/de4me/DOSBox-xcode.git DOSBox-xcode
@@ -48,7 +69,10 @@ cd ~/Desktop/DOSBox-xcode/submodules/SDL_sound/submodules/vorbis/submodules
 
 git clone https://github.com/de4me/ogg-xcode.git ogg
 
-Now you can Open ~/Desktop/DOSBox-xcode/Xcode/DOSBox.xcworkspace and build.
+Open ~/Desktop/DOSBox-xcode/Xcode/DOSBox/DOSBox.xcodeproj
+```
+
+</details>
 
 # TROUBLESHOOTING
 
